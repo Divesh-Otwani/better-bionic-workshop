@@ -17,7 +17,6 @@ titleStyle = {'margin-bottom':'0.5in',
               'font-size':'300%'}
 title = html.H1(children="Making Bionic Better", style = titleStyle)
 
-
 #################################################################################
 #################################################################################
 # Interaction
