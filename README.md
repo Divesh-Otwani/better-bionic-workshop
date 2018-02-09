@@ -1,18 +1,82 @@
 # better-bionic-workshop
 
-This is a collection of examples for building a course scheduling tool
-to replace bionic.
+This is a collection of examples to help bico students 
+build parts of a course scheduling tool to replace bionic.
 
+Specifically, this teaches you parts of dash, a web framework
+in python. 
+
+The file structure is the following.
+
+* references-for-divesh
+  * This just stores a bunch of examples for me to use
+* simple-examples
+  * Each examples is a self-contained web server.
+    Everything is extensively documented and you should be able
+    to just read the file and understand everything.
+    Please email me at dotwani@haverford.edu if you don't 
+    understand something. I'll improve it!
+
+
+
+## Rundown
+
+### What are web servers?
+
+If you're unfamiliar, a web server is just an infinite while loop
+that responds to messages it gets sent over the internet.
+
+So, when you visit gmail and click on things,
+type things in, (or even hit enter to the url),
+messages are sent to that program, the web server,
+and it responds by changing the web page that's displayed to you.
+
+### What can we do with bionic?
 
 Bionic has many features, all of which are made poorly.
+I see three fantastic projects.
 
-We aim to have several examples of parts of bionic.
+* Course visualization
+  * I give you 15 courses I'm interested in, maybe ranked
+  * Show me a tree of all the possible choices and schedules 
+    or calanders of what my week would look like.
+  * I should filter so I don't get schedules that 
+    are impossible. I should also be able to start with a few 
+    courses I know I'm going to take for sure.
+* Waitlist Exchange
+  * Often we get waitlisted for classes but other people don't
+    but ... we have classes they want more. We could trade.
+  * Freshmen trade writing seminars a lot.
+  * It would be awesome if everyone could input 
+    (class I have, class I want) pairs and a web server could
+    automatically make trading circles. 
+    * For example, say I have class A but want B more. 
+      Say you have class B and want C more.
+      Say your roomate has C but wants A more.
+      We could all put our info on this website and it could match us up.
+      Then, after we're all connected from this app, we email each other 
+      and the registrar;
+      I give your roomate class A, he gives you class C and you give me class B.
+* Graduation Requirements
+  * A nice tool where you can input your classes and 
+    visualize possible paths to finish your major, or just graduate.
+      
+
+
+### Other internship projects
+
+
+* A website to help you find bico events and stuff nearby (like philly)
+* A twitter for haverford
+* A meme website
+* You can probably think of something
 
 
 
 ## Setup
 
-From the [website](https://plot.ly/dash/installation):
+From the [website](https://plot.ly/dash/installation), 
+do this:
 
 ```python
 pip install dash==0.20.0  # The core dash backend
@@ -22,10 +86,16 @@ pip install dash-core-components==0.18.1  # Supercharged components
 pip install plotly -U
 ```
 
+Then, just run the following.
+
+> `python simple-examples/palindrome.py`
+
+
+Go to the website and things should work!
 
 
 
-## Task
+
 
 
 
