@@ -2,15 +2,9 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 
 """
-
-TODO:
-
-take input and display a schedule
-via a colored table with each slot representing
-a time
 
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_td_bgcolor
 
@@ -19,7 +13,8 @@ https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_td_bgcolor
 
 app = dash.Dash()
 
-titleStyle = {'margin-bottom':'0.5in'}
+titleStyle = {'margin-bottom':'0.5in',
+              'font-size':'300%'}
 title = html.H1(children="Making Bionic Better", style = titleStyle)
 
 
@@ -28,6 +23,11 @@ title = html.H1(children="Making Bionic Better", style = titleStyle)
 # Interaction
 #################################################################################
 #################################################################################
+
+nameOfClass = html.Div([
+    dcc.Input(id='my-id', value='', type='text'),
+    html.Div(id='my-div')
+])
 
 weekdropDown = dcc.Dropdown\
     (\
@@ -38,24 +38,30 @@ weekdropDown = dcc.Dropdown\
             {'label': 'Thursday', 'value': 'Th'},
             {'label': 'Friday', 'value': 'Fr'}
         ],
-    value=['Mo', 'We', 'Fr'],
-    multi=True
+    value=[],
+     multi=True,
+     id='dropdown'
     )
 
+
+weekMeetLabelStyle = {'text-align':'justify', 'margin-top':'0.5in'}
+weekMeetLabel = html.Label('Days of the week the class meets', style=weekMeetLabelStyle)
 weekMeetDays = html.Div([
-    html.Label('Days of the week you meet'),
+    weekMeetLabel,
     weekdropDown
     ])
 
-buttonStyle = {'margin-bottom': '0.3in'}
+
+
+# Time:
+
+
+
+buttonStyle = {'margin-bottom': '0.6in'}
 submitButton = html.Button('Update Class', id='button', style=buttonStyle)
 
-interactStyle = {'columnCount':1,
-                 'width':'70%',
-                 'position':'relative',
-                 'text-align':'justify',
-                 }
-interaction = html.Div([submitButton, weekMeetDays], style = interactStyle)
+interactStyle = {}
+interaction = html.Div([ nameOfClass, weekMeetDays, submitButton], style = interactStyle)
 
 #################################################################################
 #################################################################################
@@ -63,14 +69,9 @@ interaction = html.Div([submitButton, weekMeetDays], style = interactStyle)
 #################################################################################
 #################################################################################
 
-responseStyle = {'width':'100%',
-                 'position':'relative',
-                 'text-align':'justify'
+responseStyle ={
                  }
 interactResponse = html.Div(id='interact-response', style=responseStyle)
-
-bodyStyle = {'columnCount':2}
-body = html.Div([interaction, interactResponse], style=bodyStyle)
 
 
 hruleStyle = {'margin-bottom':'0.5in'}
@@ -79,7 +80,9 @@ hrule = html.Hr(style=hruleStyle)
 page = html.Div(children=[
     title,
     hrule,
-    body
+    interaction,
+    hrule,
+    interactResponse
     ])
 
 
@@ -87,8 +90,6 @@ centerstyle = {'text-align':'center'}
 
 myOverallStyle = {'columnCount':1,
            'text-align':'center',
-#           'left-margin':'30%',
-#           'right-margin':'30%',
            'margin':'auto',
            'width':'50%',
            'top':'0px',
@@ -98,35 +99,48 @@ myOverallStyle = {'columnCount':1,
            'font-family':'Times New Roman'
            }
 
-app.layout = html.Div([page], style=myOverallStyle)
+app.layout = html.Div([page], style=myOverallStyle, className='body')
+
+####################################################################################
+####################################################################################
+####################################################################################
+#          Callbacks
+####################################################################################
+####################################################################################
+####################################################################################
+
+
+@app.callback(
+    Output(component_id='my-div', component_property='children'),
+    [Input(component_id='my-id', component_property='value')]
+)
+def update_output_div(input_value):
+    return 'You\'ve entered "{}"'.format(input_value)
 
 
 @app.callback(
     Output(component_id='interact-response', component_property='children'),
-    [Input('button', 'n_clicks')])
-def buttonresponse(numclicks):
-    titleColStyle = {'bottom-border':'2pt solid black',
-                     'background-color':'green'
-                     }
+    [Input('button', 'n_clicks')],
+    [State('my-id', 'value'), State('dropdown', 'value')])
+def buttonresponse(numclicks, textInput, dropdown):
+    titleColStyle = {
+        'text-align':'center',
+        'border-bottom':'2px solid #ddd',
+        'margin':'auto',
+        'position':'relative',
+        'padding':'auto',
+        }
     titlecol = html.Tr([html.Td('Name'), html.Td('Class')],style = titleColStyle)
     row1 = html.Tr([html.Td('Divesh'), html.Td('Algebra')])
     numclicks = 0 if numclicks==None else numclicks
     row2 = html.Tr([html.Td('Matt'), html.Td('CS30' + str(numclicks))])
-    tableStyle = {'border' : '1px solid black',
-                  'text-align':'center',
-                  'padding':'0.5em',
-                  'width':'100%'
-                  }
-    simpleTable = html.Table([titlecol, row1, row2], style=tableStyle)
-    classNm = 'pure-table pure-table-horizontal'
-    ret = html.Div([simpleTable], className=classNm)
-    return ret
+    row3 = html.Tr([html.Td('Textfield'), html.Td(textInput)])
+    row4 = html.Tr([html.Td('DropDown'), html.Td(dropdown)])
+    tableStyle = {'border' : '3px solid black'}
+    simpleTable = html.Table([titlecol, row1, row2, row3, row4], style=tableStyle)
+    return simpleTable
 
 
-# fixing the css
-#app.css.append_css({"external_url": "https://unpkg.com/purecss@1.0.0/build/pure-min.css"})
-
-#app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
 
 if __name__ == '__main__':
     app.run_server(debug=True)
