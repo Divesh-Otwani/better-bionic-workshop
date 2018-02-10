@@ -1,21 +1,33 @@
 # better-bionic-workshop
 
+> 2/9/18 Update: I expect to be done by tomorrow at 11. 
+> Check this then.
+
 This is a collection of examples to help bico students 
+learn a tool called dash which helps you
 build parts of a course scheduling tool to replace bionic.
 
-Specifically, this teaches you parts of dash, a web framework
-in python. 
+Dash is a web framework in python.
 
 The file structure is the following.
 
 * references-for-divesh
   * This just stores a bunch of examples for me to use
+  * Ignore these
 * simple-examples
+  * Read the readme in that folder. It gives directions on
+    how you should run through the examples to learn the basics of 
+    dash
   * Each examples is a self-contained web server.
     Everything is extensively documented and you should be able
     to just read the file and understand everything.
     Please email me at dotwani@haverford.edu if you don't 
     understand something. I'll improve it!
+* starter-files
+  * There are three starter files
+  * Each is self contained and explains basic tasks to do
+    and an overall task. Also, a full version of the project 
+    requires you to learn more.
 
 
 
