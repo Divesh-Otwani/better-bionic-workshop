@@ -1,7 +1,7 @@
 # better-bionic-workshop
 
-> 2/9/18 Update: I expect to be done by tomorrow at 11. 
-> Check this then.
+> 2/9/18 Update: I expect to be done by tomorrow at 11 (pm) not (am)!
+> Check this after then :)
 
 This is a collection of examples to help bico students 
 learn a tool called dash which helps you
