@@ -1,7 +1,7 @@
 # better-bionic-workshop
 
-> 2/9/18 Update: I expect to be done by tomorrow at 11 (pm) not (am)!
-> Check this after then :)
+> Update on 2/11/18: I've fallen behind. This will be done by thursday 2/15/18
+> Check this after then :}
 
 This is a collection of examples to help bico students 
 learn a tool called dash which helps you
@@ -12,8 +12,8 @@ Dash is a web framework in python.
 The file structure is the following.
 
 * references-for-divesh
-  * This just stores a bunch of examples for me to use
   * Ignore these
+  * This just stores a bunch of examples for me to use
 * simple-examples
   * Read the readme in that folder. It gives directions on
     how you should run through the examples to learn the basics of 
@@ -38,10 +38,49 @@ The file structure is the following.
 If you're unfamiliar, a web server is just an infinite while loop
 that responds to messages it gets sent over the internet.
 
+#### Intuition
+
 So, when you visit gmail and click on things,
 type things in, (or even hit enter to the url),
-messages are sent to that program, the web server,
-and it responds by changing the web page that's displayed to you.
+messages are sent to that program, the web server, on a computer 
+far away and that program responds responds by changing the web page
+that's displayed to you.
+
+
+#### A Clear Description
+
+* Your web browser displays websites with all their buttons, text fields and 
+  stuff using html files. Html files are like instructions on how to 
+  display a nice looking website.
+  * Read [this](http://www.simplehtmlguide.com/whatishtml.php) and 
+    test the example on your own computer.
+* When you visit a website, your web browser sends a message to the program 
+  called the web server (which runs on a computer far away) to 
+  send you the html file to display the web page. This message
+  is sent over the internet.
+  * This is what loads the first page.
+  * This also happens anytime you click on links
+* Then, sometimes you click buttons and enter input.
+  Some of this input can be responded to with tiny programs 
+  inside your html, written in a (terrible) programming langugage
+  called javascript.
+  But, responding to some of your input requires the program that sent 
+  you the website to do something. For example, clicking the sent mail button
+  in gmail. In these cases your web browser sends a  message over the internet
+  to the web server.
+  That program, the web server, understands your message and sends you a new 
+  html file for your web browser to display.
+* This summarizes the basics of websites and internet use.
+* Other notes
+  * Sometimes the web server saves some information you send it
+    on the computer it runs on (far, far away).
+  * The messages you send are broken into categories, 
+    'get' messages, 'post' messages are two.
+  * With secure sites, rsa encrytpion is used to 
+    hide the messages sent to the web server.
+  
+
+
 
 ### What can we do with bionic?
 
