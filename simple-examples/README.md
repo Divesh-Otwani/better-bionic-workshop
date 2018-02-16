@@ -10,11 +10,10 @@ the materials in this order.
 _Note: You don't need to do all of these. Do the first three or four at least_
 
 
-* Read the ** section below
-* hello.py
-  * A basic hello world app.
+* Read the **Background on what we're doing** section below
 * palindrome.py
   * A minimal app to show you all the basics.
+  * I'm not doing hello world. That's too easy.
 * inputstuff.py
   * Adding on multiple ways to add input.
 * table.py
