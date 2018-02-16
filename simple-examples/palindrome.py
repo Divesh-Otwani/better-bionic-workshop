@@ -130,21 +130,50 @@ def doSomethingWithTextInput(numClicksOfButton, textInput):
     return retMsg
 
 """
-Alright, how do callbacks work?
+# Alright, how do callbacks work?
 
 at the top you write
 @app.callback(Output(...), listOfInput, listOfState)
 
 The first arguement is an instance of Output.
-Your provide two arguments, the first is the id of
-the html element inside of which you will put
-the html element that this function creates.
+Your provide two arguments to make an Output,
+the first is the id of the html element inside of
+which you will put the html element that this function creates.
+The second is the argument of this that
+you are going to change.
 
 The second argument is a list of instances of Input.
-The first arguement is the id.
-The second is the 
+  How do you make input?
+  The first arguement is the id.
+  The second is the thing you are taking as input.
+  These are special strings for different inputs.
+  For buttons, the string is 'n_clicks'.
+  For text fields, drop downs and other input forms,
+  the string is usually 'value'.
+
+The third is the listOfState.
+  This is exactly like Input.
 
 
+# What does it all mean?
+
+Whenever the value inside the input changes,
+the function is called with the arguments being
+the list of input, then the output in that order.
+Here, the first argument to the function
+doSomethingWithTextInput is the number of button clicks.
+The second is the textInput.
+
+The function returns an html element.
+That is inserted into the argument of the Output
+we talked about earlier.
+Here, the html element the function returns,
+(which is just a string)
+in inserted into the children list
+of the html Div tag with the unique id  'response-id'.
+
+
+Please contact me if something isn't clear.
 
 """
 
