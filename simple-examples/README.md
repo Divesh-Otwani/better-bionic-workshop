@@ -75,11 +75,10 @@ that's displayed to you.
   Some of this input can be responded to with tiny programs 
   inside your html, that string, written in a (terrible) programming langugage
   called javascript.
-  But, responding to some of your input requires the program that sent 
-  you the website to do something. 
-  (Remember, the program that sent you the website is called a web server.)
+* But, responding to some of your input requires the webserver to do things. 
   For example, clicking the sent mail button
-  in gmail. In these cases your web browser sends a  message over the internet
+  in gmail. 
+  In these cases your web browser sends a message over the internet
   to the web server.
   That program, the web server, understands your message and sends you a new 
   html file for your web browser to display.
@@ -95,13 +94,13 @@ that's displayed to you.
 
 #### What do I need to know to make web servers?
 
- * You need to know some background
+* You need to know some background
   * You need to know how html is displayed in your web browser
   * If I asked you to write a website that just 
     displays some images and some essays I wrote for
     some classes with a nice background and stuff, 
     you should be able to.
- * You need to understand tools like dash that help you build html
+* You need to understand tools like dash that help you build html
   * You do NOT need to know exactly what html is built.
     You just need to have a clear idea of what that html does.
 
