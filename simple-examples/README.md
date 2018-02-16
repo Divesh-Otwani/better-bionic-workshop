@@ -55,7 +55,7 @@ that's displayed to you.
   colors and stuff using html files. 
   Html files are like instructions on how to 
   display a nice looking website.
-  * Read [this](http://www.simplehtmlguide.com/whatishtml.php) and 
+  * Read [this 'simple guide to html'](http://www.simplehtmlguide.com/whatishtml.php) and 
     test the example on your own computer.
   * This is an example of a static web site.
     You don't need to run a while loop because it does 
@@ -96,11 +96,13 @@ that's displayed to you.
 
 * You need to know some background
   * You need to know how html is displayed in your web browser
-  * If I asked you to write a website that just 
-    displays some images and some essays I wrote for
-    some classes with a nice background and stuff, 
-    you should be able to.
+  * Make sure you read the 'simple guide to html' referenced above
+  * Also checkout [w3 schools](https://www.w3schools.com/tags/tag_hn.asp)
+    just enough to be able to have a very very basic idea of how 
+   [my website](http://divesh-otwani.github.io/My-Online-Workspace/)
+    works
 * You need to understand tools like dash that help you build html
+  * This is what we teach you here!
   * You do NOT need to know exactly what html is built.
     You just need to have a clear idea of what that html does.
 
