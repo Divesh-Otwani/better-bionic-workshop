@@ -7,6 +7,7 @@ learn a tool called dash which helps you
 build parts of a course scheduling tool to replace bionic.
 
 Dash is a web framework in python.
+See [here](https://plot.ly/dash/) for the user guide.
 
 The file structure is the following.
 
