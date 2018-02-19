@@ -88,7 +88,7 @@ I see three fantastic projects.
 * A website to help you find bico events and stuff nearby (like philly)
 * A twitter for haverford
 * You can probably think of something
- * Websites are really cool and useful!
+  * Interactive websites are really cool and useful UIs!
 
 
 
