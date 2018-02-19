@@ -44,7 +44,8 @@ weekdropDown = dcc.Dropdown\
 
 
 weekMeetLabelStyle = {'text-align':'justify', 'margin-top':'0.5in'}
-weekMeetLabel = html.Label('Days of the week the class meets', style=weekMeetLabelStyle)
+weekMeetLabel = html.Label('Days of the week the class meets',
+                           style=weekMeetLabelStyle)
 weekMeetDays = html.Div([
     weekMeetLabel,
     weekdropDown
@@ -52,15 +53,14 @@ weekMeetDays = html.Div([
 
 
 
-# Time:
-
-
 
 buttonStyle = {'margin-bottom': '0.6in'}
 submitButton = html.Button('Update Class', id='button', style=buttonStyle)
 
+
+interactions = [nameOfClass, weekMeetDays, submitButton]
 interactStyle = {}
-interaction = html.Div([ nameOfClass, weekMeetDays, submitButton], style = interactStyle)
+interaction = html.Div(interactions, style = interactStyle)
 
 #################################################################################
 #################################################################################
@@ -68,19 +68,23 @@ interaction = html.Div([ nameOfClass, weekMeetDays, submitButton], style = inter
 #################################################################################
 #################################################################################
 
-responseStyle ={
-                 }
-interactResponse = html.Div(id='interact-response', style=responseStyle)
+responseStyle ={}
+interactResponse = html.Div(id='interact-response',
+                            style=responseStyle)
 
 
 hruleStyle = {'margin-bottom':'0.5in'}
 hrule = html.Hr(style=hruleStyle)
+htmlBreak = html.Br()
 
 page = html.Div(children=[
     title,
+    htmlBreak,
     hrule,
     interaction,
+    htmlBreak,
     hrule,
+    htmlBreak,
     interactResponse
     ])
 
@@ -92,13 +96,15 @@ myOverallStyle = {'columnCount':1,
            'margin':'auto',
            'width':'50%',
            'top':'0px',
-#           'left':'0',
            'position':'relative',
            'padding':'auto',
            'font-family':'Times New Roman'
            }
 
-app.layout = html.Div([page], style=myOverallStyle, className='body')
+app.layout = html.Div([page],
+                      style=myOverallStyle)
+
+
 
 ####################################################################################
 ####################################################################################

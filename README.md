@@ -1,5 +1,6 @@
 # better-bionic-workshop
 
+> Status: Almost done. A few more files.
 
 This is a collection of examples to help bico students 
 learn a tool called dash which helps you
@@ -21,11 +22,6 @@ The file structure is the following.
     to just read the file and understand everything.
     Please email me at dotwani@haverford.edu if you don't 
     understand something. I'll improve it!
-* starter-files
-  * There are three starter files
-  * Each is self contained and explains basic tasks to do
-    and an overall task. Also, a full version of the project 
-    requires you to learn more.
 
 
 ## Setup

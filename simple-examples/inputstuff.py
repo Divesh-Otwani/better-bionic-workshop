@@ -4,49 +4,116 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
-"""
-Just import the stuff above.
-"""
 
 app = dash.Dash()
 
-"""
-dash.Dash() is your actual web server as an object.
-It's an instance of the class Dash().
 
-All you do is
 
-1) Build html elements and nest all of them in some large html element.
-2) Assign the large html element to app.layout
-3) Write a bunch of callback functions
+###########################################################
+#                    Html Elements
+###########################################################
 
-and it has to be done in that exact order.
+breakTag = html.Br() # put this and it just adds space between things
 
-Of course, there's a bunch of questions here:
+title = html.H1("Examples of Other Input Elements")
 
-0) What is a webserver? What am I making anyway?
-1) What is html? What are html elements and how do I make one in python?
-2) How do I nest html elements inside each other?
-3) What are callback functions? How do I write them?
-What do they have to do with what I'm making?
+dropdown = dcc.Dropdown(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='MTL' # default value
+    )
 
-TODO: I'll finish the documenation tomorrow.
-Add a button and call back then ... finish the code.
+multiSelectDropDown = dcc.Dropdown(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value=['MTL', 'SF'], # default value
+        multi=True # notice this is the only change from the last example
+    )
 
-"""
+radioSelect = dcc.RadioItems(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        value='MTL'
+    )
 
-title = html.H1(children=["A Simple Palindrome Example"])
 
-textInputBox = dcc.Input(id='inputbox', value='', type='text')
-textResponse = html.Div(id='response')
+checkboxes = dcc.Checklist(
+        options=[
+            {'label': 'New York City', 'value': 'NYC'},
+            {'label': u'Montréal', 'value': 'MTL'},
+            {'label': 'San Francisco', 'value': 'SF'}
+        ],
+        values=['MTL', 'SF']
+    )
 
-topHtmlElement = html.Div([title, textInputBox, textResponse])
+
+slider = dcc.Slider(
+         min=0,
+         max=9,
+         marks={i: 'Label {}'.format(i) for i in range(1, 6)},
+         value=5,
+         step=1,
+    )
+
+
+smoothe_slider = dcc.Slider(
+         min=0,
+         max=9,
+         marks={},
+         value=5,
+         step=0.01,
+    )
+
+
+
+###########################################################
+###########################################################
+
+
+# Layout
+allElems = [title, breakTag, dropdown,
+            breakTag, breakTag, multiSelectDropDown,
+            breakTag, breakTag, radioSelect,
+            breakTag, breakTag, checkboxes,
+            breakTag, breakTag, slider,
+            breakTag, breakTag, smoothe_slider]
+topHtmlElement = html.Div(allElems)
 app.layout = topHtmlElement
 
-@app.callback(Output('response', 'children'), [Input('inputbox', 'value')], [])
-def doSomethingWithTextInput(textInput):
-    youEntered = "You entered {}".format(textInput)
-    return youEntered
+
+
+###########################################################
+#           Two Callbacks
+###########################################################
+
+
+
+"""
+We have two callbacks.
+
+1) A button to just print back out everything
+
+
+2) A callback that demonstrates that
+not just buttons can be input.
+It changes anytime you change a slider.
+
+
+"""
+
+
+
+###########################################################
+###########################################################
 
 
 if __name__ == '__main__':
