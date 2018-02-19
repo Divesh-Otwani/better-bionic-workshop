@@ -44,7 +44,7 @@ To test this just run the following.
 > `python simple-examples/palindrome.py`
 
 
-Go to the website and things should work!
+Go to the website at `http://127.0.0.1:8050` and things should work!
 
 **Now, just go to the simple-examples section, learn stuff and make websites!**
 
