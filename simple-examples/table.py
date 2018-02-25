@@ -4,50 +4,62 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
-"""
-Just import the stuff above.
-"""
 
 app = dash.Dash()
 
-"""
-dash.Dash() is your actual web server as an object.
-It's an instance of the class Dash().
+title = html.H1(children=["Making A Table"])
+htmlBr = html.Br()
 
-All you do is
+###### Table Def
 
-1) Build html elements and nest all of them in some large html element.
-2) Assign the large html element to app.layout
-3) Write a bunch of callback functions
+titlecell1 = html.Td('Name')
+titlecell2 = html.Td('Class')
+titlerow = html.Tr([titlecell1, titlecell2])
 
-and it has to be done in that exact order.
+row1cell1 = html.Td('Divesh')
+row1cell2 = html.Td('Algebra')
+row1 = html.Tr([row1cell1, row1cell2])
 
-Of course, there's a bunch of questions here:
+row2cell1 = html.Td('Matt')
+row2cell2 = html.Td('Analysis')
+row2 = html.Tr([row2cell1, row2cell2])
 
-0) What is a webserver? What am I making anyway?
-1) What is html? What are html elements and how do I make one in python?
-2) How do I nest html elements inside each other?
-3) What are callback functions? How do I write them?
-What do they have to do with what I'm making?
+table = html.Table([titlerow, row1, row2])
 
-TODO: I'll finish the documenation tomorrow.
-Add a button and call back then ... finish the code.
+###### End of Table Def
 
-"""
 
-title = html.H1(children=["A Simple Palindrome Example"])
+listOfHtmlElements = [title, htmlBr, table]
 
-textInputBox = dcc.Input(id='inputbox', value='', type='text')
-textResponse = html.Div(id='response')
-
-topHtmlElement = html.Div([title, textInputBox, textResponse])
+topHtmlElement = html.Div(children=listOfHtmlElements)
 app.layout = topHtmlElement
 
-@app.callback(Output('response', 'children'), [Input('inputbox', 'value')], [])
-def doSomethingWithTextInput(textInput):
-    youEntered = "You entered {}".format(textInput)
-    return youEntered
+
+"""
+
+Obviously you can produce html tables
+with callbacks.
+So, you can make a button that makes a table when you
+click it.
+
+Next, in style.py, we show you
+that you can style the page and each element
+(and each element's style overrides the style from the
+element in which it's contained).
+
+Long story short, you can do things like color the cells in a table,
+make a table with any kind of border you want, control spacing,
+make things centered with nice backgrounds and so on.
+
+And, you can do all of these in response to clicking a button, 
+selecting from a drop down, moving a slider.
+
+"""
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+
+

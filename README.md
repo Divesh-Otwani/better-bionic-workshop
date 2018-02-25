@@ -1,7 +1,5 @@
 # better-bionic-workshop
 
-> Status: Almost done. A few more files.
-
 This is a collection of examples to help bico students 
 learn a tool called dash which helps you
 build parts of a course scheduling tool to replace bionic.
@@ -24,6 +22,9 @@ The file structure is the following.
     Please email me at dotwani@haverford.edu if you don't 
     understand something. I'll improve it!
 
+> Note: I'm not including starter files. 
+> I think you can figure out how to build things from these
+> simple examples.
 
 ## Setup
 
@@ -80,7 +81,15 @@ I see three fantastic projects.
 * Graduation Requirements
   * A nice tool where you can input your classes and 
     visualize possible paths to finish your major, or just graduate.
-      
+
+
+### If you are serious about building one of these
+
+Do some work until you get stuck.
+Then, set up a meeting with me!
+I'm happy to sit with you for an hour and help
+you code (I'm here to just make sure you understand the tools
+you need to solve these problems).
 
 
 ## Other internship projects

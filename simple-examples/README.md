@@ -4,8 +4,8 @@ Hopefully these are simple enough
 and clear enough to give you an idea of how things work.
 
 
-To learn dash and these tools, you should go through 
-the materials in this order.
+**To learn dash and these tools, you should go through 
+the materials in this order:**
 
 _Note: You don't need to do all of these. Do the first three or four at least_
 
