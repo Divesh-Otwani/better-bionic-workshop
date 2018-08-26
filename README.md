@@ -1,8 +1,10 @@
 # better-bionic-workshop
 
-This is a collection of examples to help bico students 
-learn a tool called dash which helps you
-build parts of a course scheduling tool to replace bionic.
+This is a collection of examples to help bico students
+learn a tool called dash and 
+
+* build simple web apps in Python
+* build a project I've wanted for a while: a course scheduling tool to replace bionic.
 
 Dash is a web framework in python.
 See [here](https://plot.ly/dash/) for the user guide.
@@ -14,7 +16,7 @@ The file structure is the following.
   * This just stores a bunch of examples for me to use
 * simple-examples
   * Read the readme in that folder. It gives directions on
-    how you should run through the examples to learn the basics of 
+    how you should run through the examples to learn the basics of
     dash
   * Each examples is a self-contained web server.
     Everything is extensively documented and you should be able
@@ -22,13 +24,13 @@ The file structure is the following.
     Please email me at dotwani@haverford.edu if you don't 
     understand something. I'll improve it!
 
-> Note: I'm not including starter files. 
+> Note: I'm not including starter files.
 > I think you can figure out how to build things from these
 > simple examples.
 
 ## Setup
 
-From the [website](https://plot.ly/dash/installation), 
+From the [website](https://plot.ly/dash/installation),
 do this:
 
 ```python
